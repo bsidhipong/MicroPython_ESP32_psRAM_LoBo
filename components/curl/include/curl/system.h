@@ -350,20 +350,20 @@
    defined(__XTENSA__) ||                                               \
    (defined(__SIZEOF_LONG__) && __SIZEOF_LONG__ == 4)  ||               \
    (defined(__LONG_MAX__) && __LONG_MAX__ == 2147483647L))
-#    define CURL_TYPEOF_CURL_OFF_T     long long
-#    define CURL_FORMAT_CURL_OFF_T     "lld"
-#    define CURL_FORMAT_CURL_OFF_TU    "llu"
-#    define CURL_SUFFIX_CURL_OFF_T     LL
-#    define CURL_SUFFIX_CURL_OFF_TU    ULL
-#  elif defined(__LP64__) || \
-        defined(__x86_64__) || defined(__ppc64__) || defined(__sparc64__) || \
-        (defined(__SIZEOF_LONG__) && __SIZEOF_LONG__ == 8) || \
-        (defined(__LONG_MAX__) && __LONG_MAX__ == 9223372036854775807L)
 #    define CURL_TYPEOF_CURL_OFF_T     long
 #    define CURL_FORMAT_CURL_OFF_T     "ld"
 #    define CURL_FORMAT_CURL_OFF_TU    "lu"
 #    define CURL_SUFFIX_CURL_OFF_T     L
 #    define CURL_SUFFIX_CURL_OFF_TU    UL
+#  elif defined(__LP64__) || \
+        defined(__x86_64__) || defined(__ppc64__) || defined(__sparc64__) || \
+        (defined(__SIZEOF_LONG__) && __SIZEOF_LONG__ == 8) || \
+        (defined(__LONG_MAX__) && __LONG_MAX__ == 9223372036854775807L)
+#    define CURL_TYPEOF_CURL_OFF_T     long long
+#    define CURL_FORMAT_CURL_OFF_T     "lld"
+#    define CURL_FORMAT_CURL_OFF_TU    "llu"
+#    define CURL_SUFFIX_CURL_OFF_T     LL
+#    define CURL_SUFFIX_CURL_OFF_TU    ULL
 #  endif
 #  define CURL_TYPEOF_CURL_SOCKLEN_T socklen_t
 #  define CURL_PULL_SYS_TYPES_H      1

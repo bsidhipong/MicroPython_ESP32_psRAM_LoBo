@@ -1023,6 +1023,7 @@ knownhost_writeline(LIBSSH2_KNOWNHOSTS *hosts,
             break;
         }
         /* otherwise fallback to default and error */
+        __attribute__((fallthrough));
     default:
         return _libssh2_error(hosts->session,
                               LIBSSH2_ERROR_METHOD_NOT_SUPPORTED,

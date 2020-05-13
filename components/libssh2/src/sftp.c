@@ -1413,6 +1413,7 @@ static ssize_t sftp_read(LIBSSH2_SFTP_HANDLE * handle, char *buffer,
                            "read request id %d sent (offset: %d, size: %d)",
                            request_id, (int)chunk->offset, (int)chunk->len);
         }
+        __attribute__((fallthrough));
 
     case libssh2_NB_state_sent:
 
@@ -1452,6 +1453,7 @@ static ssize_t sftp_read(LIBSSH2_SFTP_HANDLE * handle, char *buffer,
             /* move on to the next chunk with data to send */
             chunk = _libssh2_list_next(&chunk->node);
         }
+        __attribute__((fallthrough));
 
     case libssh2_NB_state_sent2:
 

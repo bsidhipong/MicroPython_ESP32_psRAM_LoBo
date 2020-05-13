@@ -124,7 +124,7 @@
 #define HAVE_ASSERT_H 1
 
 /* Define to 1 if you have the basename function. */
-//#define HAVE_BASENAME 1
+#define HAVE_BASENAME 1
 
 /* Define to 1 if bool is an available type. */
 #define HAVE_BOOL_T 1
